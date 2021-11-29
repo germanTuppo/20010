@@ -20,13 +20,13 @@ console.log("Nuestra inteligencia artificial va aumentando de a poco!, ahora pod
 
 /*validemos que hayamos puesto un año con 4 digitos, y que tenga coherencia*/
 if(parseInt(anioNacimiento)<100){
-    var anioNacimiento=prompt("Recuerdo haberte dicho que pongas tu año de nacimento con 4 digitos, porfa, porque se me cruzan los transistores");
+    anioNacimiento=prompt("Recuerdo haberte dicho que pongas tu año de nacimento con 4 digitos, porfa, porque se me cruzan los transistores");
 } else
 if(parseInt(anioNacimiento)>100 && parseInt(anioNacimiento)<1920){
-    var anioNacimiento=prompt("No creo que seas tan viejo!, poné tu año de nacimiento real, no seas malo!!! (con 4 digitos, gracias!)");
+    anioNacimiento=prompt("No creo que seas tan viejo!, poné tu año de nacimiento real, no seas malo!!! (con 4 digitos, gracias!)");
 } else 
 if(parseInt(anioNacimiento)>2022){
-    var anioNacimiento=prompt("Naaaa, me estas jodiendo!, ya voy a APRENDER A PEGARTE UNA PATADA EN EL TUJE EN VIVO Y EN DIRECTO!!, Ultima chance!, no seas malo. Pone tu año de nacimiento son 4 digitos y seremos amigues!");
+    anioNacimiento=prompt("Naaaa, me estas jodiendo!, ya voy a APRENDER A PEGARTE UNA PATADA EN EL TUJE EN VIVO Y EN DIRECTO!!, Ultima chance!, no seas malo. Pone tu año de nacimiento son 4 digitos y seremos amigues!");
 }
 console.log(anioNacimiento);
 /* Creo que tambian podría haber usado un case, pero tambien imagino que lo ideal sería un while, para meterlo en un bucle infinito hasta que me diga un año de 4 cifras en serio! */
