@@ -1,16 +1,28 @@
-
-
+let opcion=-1;
+let opciones= "Selecciona lo que quieres hacer: \n1) Ingresar un número para ver si es primo. \n2) Ingresar un número y ver una lista de todos los numeros primos hasta dicho número. \n0) Salir.\n";
  //console.log(primosHasta(100));
- console.log(esPrimo(991));
- console.log(esPrimo(0));
- console.log(esPrimo(11));
- console.log(esPrimo(200));
- console.log(esPrimo("asssd"));
- console.log(esPrimo(8392,1));
+while(opcion!=0){
+    let numero;
 
- console.log(primosHasta(8392));
+    console.log(opciones);//Solo para que se muestren las opciones en la consola
+    opcion=parseInt(prompt(opciones));
+    switch (opcion){
+        case 1: {
+            numero=parseInt(prompt("Ingrese el número para saber si es primo"));
+            if (esPrimo(numero)) console.log(`El ${numero} es primo\n`); else console.log(`El ${numero} no es primo\n\n`);
+            break;           
+        }
+        case 2: {
+            numero=parseInt(prompt("Ingrese el número para conocer todos los números primos hasta ese número, no te zarpes pls!"));
+            console.log(`Los numeros primos hasta el ${numero} son:\n${primosHasta(numero)}\n\n`);
+            break;
+        }
 
+        default: console.log("La opción es incorrecta!. Ingresela nuevamente");
+    }
+    
 
+}
 
 
 
@@ -43,7 +55,9 @@ function primosHasta (numero){
                 cadena=`${cadena} ${i}, `;
             }
         }
-        cadena=cadena -", ";
+        /*Esto lo hago para eliminar la última coma, lo saqué de aca: https://www.delftstack.com/es/howto/javascript/remove-last-character-from-javascript/#utilice-el-m%C3%A9todo-slice-para-eliminar-el-%C3%BAltimo-car%C3%A1cter-de-una-cadena-de-javascript */
+        cadena=cadena.slice(0, -1);
+        cadena=cadena.slice(0, -1);
         return cadena;
     }    
 }
