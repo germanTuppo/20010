@@ -25,7 +25,6 @@ while(opcion!=0){
 }
 
 
-
 function esPrimo(numero){
     /*Regresa 1 si el número ingregado es primo (Es decir tiene exactamente dos divisores),
       0 si no lo es o -1 en caso de 0, negativo o con coma*/
@@ -63,88 +62,63 @@ function primosHasta (numero){
 }
 
 
-/************************** Desafío clase 1 **************************/
-function pedirNombreFecha(){
-    var nombre=prompt("Ingrese su nombre");
-    var diaNacimiento=prompt("¿Que dia naciste?");
-    var mesNacimiento=prompt("¿De que mes?");
-    var anioNacimiento=prompt("¿y el año, si me queres contar? (con cuatro digitos porque se rompe todo, porfa!)");
-
-    edad=2021-parseInt(anioNacimiento);
-    edadDiciembre= edad -1;
-
-    console.log("Hola "+nombre+". Mi super sistéma informatico detecta que naciste el "+diaNacimiento+" del "+mesNacimiento+" del "+anioNacimiento+" esto quiere dedir que tenés "+edad+" años. A no ser que hayas nacido entre el 27 de noviembre y el 31 de diciembre, en ese caso tenés: "+ edadDiciembre+" años (pero no cantes victoria ehhh!!)");
-    }
-/*********************************************************************/
-
-/************************** Desafío clase 2 **************************/
-function evolucion(){
-    console.log("Nuestra inteligencia artificial va aumentando de a poco!, ahora podemos decir algunas cosas mas de vos "+nombre+":");
-
-    /*validemos que hayamos puesto un año con 4 digitos, y que tenga coherencia*/
-    if(parseInt(anioNacimiento)<100){
-        anioNacimiento=prompt("Recuerdo haberte dicho que pongas tu año de nacimento con 4 digitos, porfa, porque se me cruzan los transistores");
-    } else
-    if(parseInt(anioNacimiento)>100 && parseInt(anioNacimiento)<1920){
-        anioNacimiento=prompt("No creo que seas tan viejo!, poné tu año de nacimiento real, no seas malo!!! (con 4 digitos, gracias!)");
-    } else 
-    if(parseInt(anioNacimiento)>2022){
-        anioNacimiento=prompt("Naaaa, me estas jodiendo!, ya voy a APRENDER A PEGARTE UNA PATADA EN EL TUJE EN VIVO Y EN DIRECTO!!, Ultima chance!, no seas malo. Pone tu año de nacimiento son 4 digitos y seremos amigues!");
-    }
-    console.log(anioNacimiento);
-    /* Creo que tambian podría haber usado un case, pero tambien imagino que lo ideal sería un while, para meterlo en un bucle infinito hasta que me diga un año de 4 cifras en serio! */
-
-    var mesTexto=""; //Convierte el mes de formato numérico a formato texto.
-    var cantMaxDiasMes;
-    switch(parseInt(mesNacimiento)){
+function mesDias(mes){
+    
+    switch(parseInt(mes)){
         case 1:
-            mesTexto = "Enero";
-            cantMaxDiasMes = 31;
-            break;
+            return 31;
         case 2:
-            mesTexto = "Febrero";
-            cantMaxDiasMes = 29;
-            break;
+            return 29;
         case 3: 
-            mesTexto = "Marzo";
-            cantMaxDiasMes = 31;
-            break;
+            return 31;
         case 4: 
-            mesTexto = "Abril";
-            cantMaxDiasMes = 30;
-            break;
+            return 30;
         case 5: 
-            mesTexto = "Mayo";
-            cantMaxDiasMes = 31;
-            break;
+            return 31;
         case 6: 
-            mesTexto = "Junio";
-            cantMaxDiasMes = 30;
-            break;
+            return 30;
         case 7: 
-            mesTexto = "Julio";
-            cantMaxDiasMes = 31;
-            break;
+            return 31;
         case 8: 
-            mesTexto = "Agosto";
-            cantMaxDiasMes = 31;
-            break;
+            return 31;
         case 9: 
-            mesTexto = "Septiembre";
-            cantMaxDiasMes = 30;
-            break;
+            return 30;
         case 10: 
-            mesTexto = "Octubre";
-            cantMaxDiasMes = 31;
-            break;
+            return 31;
         case 11: 
-            mesTexto = "Noviembre";
-            cantMaxDiasMes = 30;
-            break;
+            return 30;
         case 12: 
-            mesTexto = "Diciembre";
-            cantMaxDiasMes = 31;
-            break;
+            return 31;
+    }
+}
+
+function mesTexto(mes){
+    /*Función que indica dado un mes (en formato numérico) su nombre en formato texto*/
+    switch(parseInt(mes)){
+        case 1:
+            return "Enero";            
+        case 2:
+            return "Febrero";           
+        case 3: 
+            return "Marzo";           
+        case 4: 
+            return "Abril";          
+        case 5: 
+            return "Mayo";           
+        case 6: 
+            return "Junio";          
+        case 7: 
+            return "Julio";            
+        case 8: 
+            return "Agosto";            
+        case 9: 
+            return "Septiembre";           
+        case 10: 
+            return "Octubre";            
+        case 11: 
+            return "Noviembre";           
+        case 12: 
+            return "Diciembre";           
     }
 }
 /*********************************************************************/
