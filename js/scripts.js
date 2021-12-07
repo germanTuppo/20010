@@ -1,22 +1,22 @@
 
 
-console.log(esPrimo(1999993));
+ //console.log(primosHasta(100));
+ console.log(esPrimo(991));
+ console.log(esPrimo(0));
+ console.log(esPrimo(11));
+ console.log(esPrimo(200));
+ console.log(esPrimo("asssd"));
+ console.log(esPrimo(8392,1));
+
+ console.log(primosHasta(8392));
 
 
 
 
-
-
-function primosHasta (numero){
-    /*Devuelve una cadena, separada por comas, de los numeros primos hasta cierto valor (enteros positivos) o -1 en caso de error*/
-    if(numero<1 || numero%1 != 0){
-        return -1;
-    }
-    
-}
 
 function esPrimo(numero){
-    /*Regresa 1 si el número ingregado es primo (Es decir tiene exactamente dos divisores), 0 si no lo es o -1 en caso de 0, negativo o con coma*/
+    /*Regresa 1 si el número ingregado es primo (Es decir tiene exactamente dos divisores),
+      0 si no lo es o -1 en caso de 0, negativo o con coma*/
     if(numero<1 || numero%1 != 0){
         return -1;
     }
@@ -24,13 +24,29 @@ function esPrimo(numero){
             return 0;
         }
             else {
-                for(i=2;i<numero;i++){
+                for(let i=2;i<numero;i++){
                     if (numero%i == 0) return 0;
                 }
                 return 1;
             }
 }
 
+function primosHasta (numero){
+    /*Devuelve una cadena, separada por comas, de los numeros primos hasta cierto valor (enteros positivos) o -1 en caso de error*/
+    let cadena="";
+    if(numero<1 || numero%1 != 0){
+        return -1;
+    } 
+    else {
+        for(let i=1;i<numero;i++){
+            if (esPrimo(i)){ 
+                cadena=`${cadena} ${i}, `;
+            }
+        }
+        cadena=cadena -", ";
+        return cadena;
+    }    
+}
 
 
 /************************** Desafío clase 1 **************************/
