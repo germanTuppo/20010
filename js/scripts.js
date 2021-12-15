@@ -1,4 +1,84 @@
+
 /***************************************************************************************************************
+ *     
+ * OBJETOS------------------>
+ * 
+ ***************************************************************************************************************/
+
+/*objeto donde pido datos y paso la información por consola*/
+function PersonaMasTextos(nombre) {
+    this.nombre=nombre;
+    
+    this.saludoInicial= function(){console.log(`Hola ${this.nombre} espero que estés bién!!!\n\n`)}
+    this.informacion= function(){console.log(`Preparado para trabajar con matrices?, para continuar deberas ingresar los valores por filas de una matriz de 3 x 3 (no voy a validar esto porque la idea es hacerlo con el dom despues. INGRESA 9 NUMEROS:\n`)}
+    this.infoDatos= function(){console.log(`La matriz ingresada es:\n`)}
+}
+
+/* clase matriz, contiene al constructor mas metodos */
+class Matriz {
+    constructor (a, b, c, d, e, f, g, h, i){
+        /*Esto se tendría que hacer con una matriz, de momento lo hago a lo bruto*/
+        this.a = a;
+        this.b = b;
+        this.c = c;
+        this.d = d;
+        this.e = e;
+        this.f = f;
+        this.g = g;
+        this.h = h;
+        this.i = i;
+    }
+
+    mostrarDatos() {
+        console.log(`${this.a} ${this.b} ${this.c}\n${this.d} ${this.e} ${this.f}\n${this.g} ${this.h} ${this.i}\n`);
+    }
+
+
+}
+/*ingresar el nombre*/
+let nombre=prompt("ingrese su nombre");
+
+/*Inicializo el objeto persona*/
+const persona = new PersonaMasTextos(nombre);
+
+/*saludo Inicial*/
+persona.saludoInicial();
+persona.informacion();
+
+/*Armar la matriz*/
+let armarMatriz = [];
+
+for(let i=0;i<=8;i++){
+    armarMatriz [i] = parseInt(prompt("ingrese el siguiente valor de la matriz"));
+}
+
+/*Inicializar la clase matriz*/
+const matriz = new Matriz(armarMatriz[0], armarMatriz[1], armarMatriz[2], armarMatriz[3], armarMatriz[4], armarMatriz[5], armarMatriz[6], armarMatriz[7], armarMatriz[8]);
+
+
+persona.infoDatos();
+matriz.mostrarDatos();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***************************************************************************************************************
+ *     
+ * Separo un poco esto que corresponde a los desafíos anteriores. Saqué el menú tambien porque me molesta un poco
+ * el tema de los alert y los console log, ademas quiero empezar a dejar preparado lo del jueves que incluye a la 
+ * preentrega. de momento en este caso solo me interesa la parte de objetos.
  * 
  *FUNCIONES
  * 
