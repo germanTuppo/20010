@@ -44,3 +44,32 @@ while(opcion!=0){
 
 
 
+
+
+
+
+
+
+/*ingresar el nombre*/
+let nombre=prompt("ingrese su nombre");
+
+/*Inicializo el objeto persona*/
+const persona = new PersonaMasTextos(nombre);
+
+/*saludo Inicial*/
+persona.saludoInicial();
+persona.informacion();
+
+/*Armar la matriz*/
+let armarMatriz = [];
+
+for(let i=0;i<=8;i++){
+    armarMatriz [i] = parseInt(prompt("ingrese el siguiente valor de la matriz"));
+}
+
+/*Inicializar la clase matriz*/
+const matriz = new Matriz(armarMatriz[0], armarMatriz[1], armarMatriz[2], armarMatriz[3], armarMatriz[4], armarMatriz[5], armarMatriz[6], armarMatriz[7], armarMatriz[8]);
+
+
+persona.infoDatos();
+matriz.mostrarDatos();
