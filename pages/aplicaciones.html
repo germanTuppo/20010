@@ -32,11 +32,13 @@
                   <li class="nav-item">
                     <a class="nav-link active" href="#">Aplicaciones</a>
                   </li>
+
+                  <!-- Registro y login -->
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Registro</a>
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#registroModal">Registro</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
                   </li>
                 </ul>
               </div>
@@ -44,12 +46,12 @@
           </nav>
     </header>
 
-    <main class="row">
-        <section>
-            <h1>Aplicaciones matemáticas</h1>
-            <p>Acá podran encontrar algunas aplicaciones y juegos que unan mis dos pasiones: Las matemáticas y la programación</p>
+    <main>
+        <section class="row">
+            <h1 class="col-12 text-center">Aplicaciones matemáticas</h1>
+            <p class="col-12 text-center">Acá podran encontrar algunas aplicaciones y juegos que unan mis dos pasiones: Las matemáticas y la programación</p>
         </section>
-        <section id="generadorAplicaciones"></section>
+        <section class="row" id="generadorAplicaciones"></section>
     </main>
     
     <footer class="row">
@@ -64,13 +66,81 @@
   </footer>
 
 
+
+
+
     <!------------------------------------------------------------------------------------------
                                        MODALS BOOTSTRAP LOGIN
     -------------------------------------------------------------------------------------------->
+  <!-- Modal REGISTRO-->
+  <div class="modal fade" id="registroModal" tabindex="-1" aria-labelledby="registroModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registroModallLabel">Registro</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-
-
+  <!-- Modal LOGIN-->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
     
+
+
+  
     <!------------------------------------------------------------------------------------------
                                              SCRIPTS JS
     -------------------------------------------------------------------------------------------->
@@ -80,6 +150,6 @@
     
     <!-- Mi js -->
     <script src="js/scripts.js"></script>
-    
+
 </body>
 </html>
