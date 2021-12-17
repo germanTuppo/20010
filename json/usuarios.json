@@ -1,0 +1,50 @@
+[
+    {
+
+        "id" : 1,
+        "user": "ger1985",
+        "password": "1234",
+        "nombre": "German",
+        "apellido": "Tuppo",
+        "edad": 36,
+        "telefono": "167431242",
+        "mail": "germantuppo@gmail.com"
+
+    },
+    {
+
+        "id" : 2,
+        "user": "uciel",
+        "password": "12345",
+        "nombre": "Uciel",
+        "apellido": "Sola",
+        "edad": 23,
+        "telefono": "1111111111",
+        "mail": "ucielsola@gmail.com"
+
+    },
+    {
+
+        "id" : 3,
+        "user": "qwerty",
+        "password": "12345",
+        "nombre": "Juan",
+        "apellido": "Perez",
+        "edad": 100,
+        "telefono": "1122334455",
+        "mail": "Juanperez@gmail.com"
+
+    },
+    {
+
+        "id" : 4,
+        "user": "floyd86",
+        "password": "asd123",
+        "nombre": "Roger",
+        "apellido": "Waters",
+        "edad": 70,
+        "telefono": "1133221100",
+        "mail": "waters69@gmail.com"
+
+    }
+]
