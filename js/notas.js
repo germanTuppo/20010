@@ -1,3 +1,6 @@
+/*Este archivo se va en cualquier momento, lo uso para no perder ciertas cosas que tengo hechas y que por momentos me quiero traer */
+
+
 let opcion=100;
 let opciones= "Selecciona lo que quieres hacer: \n1) Ingresar un número para ver si es primo. \n2) Ingresar un número y ver una lista de todos los numeros primos hasta dicho número. \n3) Ingresar un mes en formato numérico para verlo en formato texto y conocer la candidad de días posee. \n4) Descomponer un numero en sus factores primos \n0) Salir.\n";
 
