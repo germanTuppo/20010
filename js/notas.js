@@ -76,3 +76,88 @@ const matriz = new Matriz(armarMatriz[0], armarMatriz[1], armarMatriz[2], armarM
 
 persona.infoDatos();
 matriz.mostrarDatos();
+
+
+
+
+
+
+
+
+
+/* nombre="uciel"; */
+/* pass=prompt("ingrese su contraseña"); */
+/* console.log((usuarios.find(e => e.user===nombre)).nombre); */
+
+/*Interactuo simple con el usuario de momento, por ultimisima vez con prompt*/
+let opcion=0;
+let opciones= "Selecciona lo que quieres hacer: \n1) Loguearte \n2) Ver usuarios \n3) ordenar por nombre (alfabeticamente)\n4) agregar usuario\n5) Salir.\n";
+
+while(opcion!=5){
+
+    console.log(opciones);//Solo para que se muestren las opciones en la consola
+    opcion=parseInt(prompt(opciones));
+
+    let nombre;
+    let pass;
+
+    switch (opcion){
+        case 1: {
+            console.log("\nLogearte\n");
+            nombre="ger1985";
+            pass=prompt("ingrese su contraseña");
+                 if((usuarios.find(e => e.user===nombre)).user===nombre){
+                    console.log("usuario encontrado")
+                }
+            break;
+        }
+        case 2: {
+            console.log("\nVer usuarios\n");
+            break;           
+        }
+        case 3: {
+            console.log("\nOrdenar usuarios por nombre\n");
+            break;
+        }
+        case 4: {
+            console.log("\nAgregar usuario\n");
+            break;
+        }
+        case 5: {
+            console.log("\nSalir\n");
+            break;
+        }
+
+        default: console.log("%cLa opción es incorrecta!. Ingresela nuevamente\n\n","color:#000;font-size: 14px;background:#0f0;font-weight: bold;");
+    }
+}
+
+
+/* 
+ class Matriz {
+    constructor (matriz){
+        this.matriz=matriz;
+    }
+
+    mostrarDatos() {
+        console.log(`${this.matriz}\n`);
+    }
+
+}
+
+const matrizAOperar = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+const matriz = new Matriz(matrizAOperar);
+
+
+matriz.mostrarDatos(); */
+
+
+
+// SignUp
+const signUpForm = document.querySelector("#signup-form");
+signUpForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const email = signUpForm["signup-email"].value;
+  const password = signUpForm["signup-password"].value;
+
+});

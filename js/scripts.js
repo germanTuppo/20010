@@ -1,5 +1,31 @@
 /***************************************************************************************************************
  *     
+ * DOM + PRUEBAS CON FIREBASE + PRUEBAS CON EVENTOS (LO SE ME ESTOY SPOILEANDO PERO ME PROMETÍ NO MAS PROMPT)
+ * (UCIEL NO PUDE ESTAR EN EL AFTER, PERO VI LA GRABACIÓN SOS MUY DIDACTICO. TE VOY A ROBAR MIL COSAS EHHH)
+ * 
+ ***************************************************************************************************************/
+
+// SignUp
+const signUpForm = document.querySelector("#signup-form");
+signUpForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const email = signUpForm["signup-email"].value;
+  const password = signUpForm["signup-password"].value;
+
+});
+
+
+
+
+
+
+
+
+
+
+
+/***************************************************************************************************************
+ *     
  * ARREGLOS------------------>
  * 
  ***************************************************************************************************************/
@@ -22,74 +48,6 @@ usuarios[0] = new Usuario (1, "ger1985", "1234", "German", "Tuppo","", "11674312
 usuarios[1] = new Usuario (2, "uciel", "12345", "Uciel", "Sola","", "1111111111", "ucielsola@gmail.com" );
 usuarios[2] = new Usuario (3, "juan123", "qwerty", "Juan", "Perez","", "1122334455", "Juanperez@gmail.com" );
 usuarios[3] = new Usuario (4, "floyd86", "asd123", "Roger", "Waters","", "1133221100", "waters69@gmail.com" );
-
-/* nombre="uciel"; */
-/* pass=prompt("ingrese su contraseña"); */
-/* console.log((usuarios.find(e => e.user===nombre)).nombre); */
-
-/*Interactuo simple con el usuario de momento, por ultimisima vez con prompt*/
-let opcion=0;
-let opciones= "Selecciona lo que quieres hacer: \n1) Loguearte \n2) Ver usuarios \n3) ordenar por nombre (alfabeticamente)\n4) agregar usuario\n5) Salir.\n";
-
-while(opcion!=5){
-
-    console.log(opciones);//Solo para que se muestren las opciones en la consola
-    opcion=parseInt(prompt(opciones));
-
-    let nombre;
-    let pass;
-
-    switch (opcion){
-        case 1: {
-            console.log("\nLogearte\n");
-            nombre="ger1985";
-            pass=prompt("ingrese su contraseña");
-                 if((usuarios.find(e => e.user===nombre)).user===nombre){
-                    console.log("usuario encontrado")
-                }
-            break;
-        }
-        case 2: {
-            console.log("\nVer usuarios\n");
-            break;           
-        }
-        case 3: {
-            console.log("\nOrdenar usuarios por nombre\n");
-            break;
-        }
-        case 4: {
-            console.log("\nAgregar usuario\n");
-            break;
-        }
-        case 5: {
-            console.log("\nSalir\n");
-            break;
-        }
-
-        default: console.log("%cLa opción es incorrecta!. Ingresela nuevamente\n\n","color:#000;font-size: 14px;background:#0f0;font-weight: bold;");
-    }
-}
-
-
-/* 
- class Matriz {
-    constructor (matriz){
-        this.matriz=matriz;
-    }
-
-    mostrarDatos() {
-        console.log(`${this.matriz}\n`);
-    }
-
-}
-
-const matrizAOperar = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-const matriz = new Matriz(matrizAOperar);
-
-
-matriz.mostrarDatos(); */
-
-
 
 
 
