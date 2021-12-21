@@ -6,7 +6,8 @@
  ***************************************************************************************************************/
 
 // Accedemos a los elementos del DOM con sus IDs Acá me siento un ladrón, pero me parecio muy ordenado como lo hiciste en el after
-/*Inputs login*/
+
+/*Inputs registro*/
 const registroInputUser = document.querySelector("#registroInputUser");
 const registroInputPass = document.querySelector("#registroInputPass");
 const registroInputNombre = document.querySelector("#registroInputNombre");
@@ -16,6 +17,13 @@ const registroInputTelefono = document.querySelector("#registroInputTelefono");
 const registroInputMail = document.querySelector("#registroInputMail");
 const registroRecibirInfo = document.querySelector("#registroRecibirInfo");
 
+/*Inputs login*/
+const loginInputUser = document.querySelector("#loginInputUser");
+const loginInputMail = document.querySelector("#loginInputMail");
+const loginInputPass = document.querySelector("#loginInputPass");
+
+/*  */
+const botonesNavegacion = document.querySelector("#botonesNavegacion");
 
 /*mostrar usuarios en el index. VUELA EN ALGUN MOMENTO*/
 const listaUsuarios = document.querySelector("#listaUsuarios");
@@ -40,14 +48,33 @@ inicializar[2] = new Usuario (3, "juan123", "qwerty", "Juan", "Perez","0", "1122
 inicializar[3] = new Usuario (4, "floyd86", "asd123", "Roger", "Waters","0", "1133221100", "waters69@gmail.com" );
 
 
-// Recuperamos array del localStorage. Si localStorage está vacío, la variable se inicializa con un array vacío
+
+
+// Recuperamos array del localStorage. Si localStorage está vacío, la variable se inicializa con inicializar
 let usuarios = JSON.parse(localStorage.getItem("usuarios")) || actualizarLocalStorage(inicializar);
 
-// Si el array ya contiene usuarios, los imprimimos al HTML
+/*Recupero el usuario logueado del localStorage, si no existe creo un arreglo vacio*/
+let usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado")) || [];
+
+// Si el array ya contiene usuarios, los imprimimos al HTML (usuarios registrados)
 if (usuarios.length) {
 	console.log("recuperado de localStorage");
 	imprimirUsuarios(usuarios);
 }
+
+// Si el usuario está logueado, muestro un boton salir en el menú, si no lo está muestro los botones ingresar y registrar
+if (usuarioLogueado.length) {
+	console.log("Usuario logueado");
+    botonesNavegacion.innerHTML = '<button type="button" class="btn btn-danger" onclick="desloguearUsuario()">Salir</button>';
+} else
+    {
+        console.log("Usuario desogueado");
+        let deslogueado= '';
+        deslogueado+='<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Ingresar</button>'; 
+        deslogueado+='<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#registroModal">Registrarse</button>';
+        botonesNavegacion.innerHTML = deslogueado;
+    }
+
 
 
 
@@ -75,7 +102,7 @@ function imprimirUsuarios(array) {
 	});
 }
 
-//imprimirUsuarios(usuarios);
+
 
 
 
@@ -105,8 +132,15 @@ function registrarUsuario(){
     
 }
 
+/*Funcion para loguearse*/
+function loguearUsuario(){
 
+}
 
+/*Funcion para desloguearse*/
+function desloguearUsuario(){
+
+}
 
 /***************************************************************************************************************
  *     
