@@ -6,29 +6,23 @@
  ***************************************************************************************************************/
 
 // SignUp
-const signUpForm = document.querySelector("#signup-form");
+/* const signUpForm = document.querySelector("#signup-form");
 signUpForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const email = signUpForm["signup-email"].value;
   const password = signUpForm["signup-password"].value;
 
-});
+}); */
 
+// accedemos a los elementos del DOM con sus IDs
+/* const inputNombre = document.querySelector("#input-nombre");
+const inputApellido = document.querySelector("#input-apellido");
+const inputEdad = document.querySelector("#input-edad");
+const inputOcupacion = document.querySelector("#input-ocupacion");
+const inputImagen = document.querySelector("#input-imagen"); */
 
+const listaUsuarios = document.querySelector("#listaUsuarios");
 
-
-
-
-
-
-
-
-
-/***************************************************************************************************************
- *     
- * ARREGLOS------------------>
- * 
- ***************************************************************************************************************/
 
  function Usuario(id, user, password, nombre, apellido, edad, telefono, mail){
     this.id=id;
@@ -43,51 +37,38 @@ signUpForm.addEventListener("submit", (e) => {
 
 const usuarios = [];
 
-/*CREO UN ARRAY DE OBJETOS, DESPUES TENDRIA QUE LEVANTARLO DE UN JSON POR LO QUE ENTENDÏ DE LA CLASE DE EL MARTES JAJAJAJA*/
-usuarios[0] = new Usuario (1, "ger1985", "1234", "German", "Tuppo","", "1167431242", "germantuppo@gmail.com" );
-usuarios[1] = new Usuario (2, "uciel", "12345", "Uciel", "Sola","", "1111111111", "ucielsola@gmail.com" );
-usuarios[2] = new Usuario (3, "juan123", "qwerty", "Juan", "Perez","", "1122334455", "Juanperez@gmail.com" );
-usuarios[3] = new Usuario (4, "floyd86", "asd123", "Roger", "Waters","", "1133221100", "waters69@gmail.com" );
+/*CREO UN ARRAY DE OBJETOS, despues estará en el JSON o en firebase*/
+usuarios[0] = new Usuario (1, "ger1985", "1234", "German", "Tuppo","36", "1167431242", "germantuppo@gmail.com" );
+usuarios[1] = new Usuario (2, "uciel", "12345", "Uciel", "Sola","0", "1111111111", "ucielsola@gmail.com" );
+usuarios[2] = new Usuario (3, "juan123", "qwerty", "Juan", "Perez","0", "1122334455", "Juanperez@gmail.com" );
+usuarios[3] = new Usuario (4, "floyd86", "asd123", "Roger", "Waters","0", "1133221100", "waters69@gmail.com" );
 
 
-
-
-/***************************************************************************************************************
- *     
- * OBJETOS------------------>
- * 
- ***************************************************************************************************************/
-
-/*objeto donde pido datos y paso la información por consola*/
-function PersonaMasTextos(nombre) {
-    this.nombre=nombre;
-    
-    this.saludoInicial= function(){console.log(`Hola ${this.nombre} espero que estés bién!!!\n\n`)}
-    this.informacion= function(){console.log(`Preparado para trabajar con matrices?, para continuar deberas ingresar los valores por filas de una matriz de 3 x 3 (no voy a validar esto porque la idea es hacerlo con el dom despues. INGRESA 9 NUMEROS:\n`)}
-    this.infoDatos= function(){console.log(`La matriz ingresada es:\n`)}
+/* Mostrar usuarios activos en el index (seguridad a marzo) */
+function imprimirUsuarios(array) {
+	listaUsuarios.innerHTML = "";
+	array.forEach((usuario) => {
+		const cardUsuario = `<div class="card col-12 col-md-6 col-xl-4 p-2">
+                                <img src="media/no-disponible.png" class="card-img-top" alt="Imagen no disponible">
+                                <div class="card-body">
+                                    <h5 class="card-title">Id de usuario: ${usuario.id}</h5>
+                                </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Usuario: ${usuario.user}</li>
+                                        <li class="list-group-item">Contraseña: ${usuario.password}</li>
+                                        <li class="list-group-item">Nombre: ${usuario.nombre}</li>
+                                        <li class="list-group-item">Apellido: ${usuario.apellido}</li>
+                                        <li class="list-group-item">Edad: ${usuario.edad}</li>
+                                        <li class="list-group-item">Mail: ${usuario.mail}</li>
+                                        <li class="list-group-item">Telefono: ${usuario.telefono}</li>
+                                    </ul>
+                            </div>
+        `;
+		listaUsuarios.innerHTML += cardUsuario;
+	});
 }
 
-/* clase matriz, contiene al constructor mas metodos */
-/* class Matriz {
-    constructor (a, b, c, d, e, f, g, h, i){
-
-        this.a = a;
-        this.b = b;
-        this.c = c;
-        this.d = d;
-        this.e = e;
-        this.f = f;
-        this.g = g;
-        this.h = h;
-        this.i = i;
-    }
-
-    mostrarDatos() {
-        console.log(`${this.a} ${this.b} ${this.c}\n${this.d} ${this.e} ${this.f}\n${this.g} ${this.h} ${this.i}\n`);
-    }
-
-} */
-
+imprimirUsuarios(usuarios)
 
 /***************************************************************************************************************
  *     

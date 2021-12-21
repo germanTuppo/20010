@@ -161,3 +161,42 @@ signUpForm.addEventListener("submit", (e) => {
   const password = signUpForm["signup-password"].value;
 
 });
+
+
+
+
+/***************************************************************************************************************
+ *     
+ * OBJETOS------------------>
+ * 
+ ***************************************************************************************************************/
+
+/*objeto donde pido datos y paso la información por consola*/
+function PersonaMasTextos(nombre) {
+    this.nombre=nombre;
+    
+    this.saludoInicial= function(){console.log(`Hola ${this.nombre} espero que estés bién!!!\n\n`)}
+    this.informacion= function(){console.log(`Preparado para trabajar con matrices?, para continuar deberas ingresar los valores por filas de una matriz de 3 x 3 (no voy a validar esto porque la idea es hacerlo con el dom despues. INGRESA 9 NUMEROS:\n`)}
+    this.infoDatos= function(){console.log(`La matriz ingresada es:\n`)}
+}
+
+/* clase matriz, contiene al constructor mas metodos */
+/* class Matriz {
+    constructor (a, b, c, d, e, f, g, h, i){
+
+        this.a = a;
+        this.b = b;
+        this.c = c;
+        this.d = d;
+        this.e = e;
+        this.f = f;
+        this.g = g;
+        this.h = h;
+        this.i = i;
+    }
+
+    mostrarDatos() {
+        console.log(`${this.a} ${this.b} ${this.c}\n${this.d} ${this.e} ${this.f}\n${this.g} ${this.h} ${this.i}\n`);
+    }
+
+} */

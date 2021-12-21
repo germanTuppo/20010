@@ -46,9 +46,16 @@
           </nav>
     </header>
 
-    <main class="row">
+    <main>
+      <div class="row">
         <h1 class="col-12 text-center">Hola, mi nombre es German, estoy haciendo un curso de js</h1>
         <p class="col-12 text-center">En estos momentos estoy pensando un tema para mi proyecto, pero no se me ocurre otra cosa que no sea un ecommerce <br> Asi que de momento, hago algo random </p>
+      </div>
+      
+      <!-- Muestro los usuarios a modo de prueba y para que en las pruebas poder loguear -->
+      <div id="listaUsuarios" class="row">      
+      </div>
+
     </main>
     
     <footer class="row">
@@ -81,23 +88,54 @@
         <div class="modal-body">
           <form>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
+              <label for="loginInputUser" class="form-label">Usuario</label>
+              <input type="text" class="form-control" id="loginInputUser">
+            </div> 
+            
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+              <label for="loginInputPass" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="loginInputPass">
             </div>
+
+            <div class="mb-3">
+              <label for="loginInputNombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="loginInputNombre">
+            </div> 
+
+            <div class="mb-3">
+              <label for="loginInputApellido" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="loginInputApellido">
+            </div> 
+
+            <div class="mb-3">
+              <label for="loginInputEdad" class="form-label">Edad</label>
+              <input type="text" class="form-control" id="loginInputEdad">
+            </div> 
+
+            <div class="mb-3">
+              <label for="loginInputTelefono" class="form-label">Telefono</label>
+              <input type="text" class="form-control" id="loginInputTelefono">
+            </div> 
+
+            <div class="mb-3">
+              <label for="loginInputMail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="loginInputMail" aria-describedby="loginMailHelp">
+              <div id="loginMailHelp" class="form-text">Nunca compartiremos tu mail con nadie más</div>
+            </div>
+
             <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              <label class="form-check-label" for="exampleCheck1">Quiero recibir informacion por mail</label>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+
+            <!-- Validar los datos ingresados -->
+            <div id="loginValidad" class="mb-3"></div> 
+
+            <button type="submit" onclick="registrarUsuario()" class="btn btn-primary">Registrar</button>
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>
