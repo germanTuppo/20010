@@ -5,26 +5,23 @@
  * 
  ***************************************************************************************************************/
 
-// SignUp
-/* const signUpForm = document.querySelector("#signup-form");
-signUpForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const email = signUpForm["signup-email"].value;
-  const password = signUpForm["signup-password"].value;
+// Accedemos a los elementos del DOM con sus IDs Acá me siento un ladrón, pero me parecio muy ordenado como lo hiciste en el after
+/*Inputs login*/
+const registroInputUser = document.querySelector("#registroInputUser");
+const registroInputPass = document.querySelector("#registroInputPass");
+const registroInputNombre = document.querySelector("#registroInputNombre");
+const registroInputApellido = document.querySelector("#registroInputApellido");
+const registroInputEdad = document.querySelector("#registroInputEdad");
+const registroInputTelefono = document.querySelector("#registroInputTelefono");
+const registroInputMail = document.querySelector("#registroInputMail");
+const registroRecibirInfo = document.querySelector("#registroRecibirInfo");
 
-}); */
 
-// accedemos a los elementos del DOM con sus IDs
-/* const inputNombre = document.querySelector("#input-nombre");
-const inputApellido = document.querySelector("#input-apellido");
-const inputEdad = document.querySelector("#input-edad");
-const inputOcupacion = document.querySelector("#input-ocupacion");
-const inputImagen = document.querySelector("#input-imagen"); */
-
+/*mostrar usuarios en el index. VUELA EN ALGUN MOMENTO*/
 const listaUsuarios = document.querySelector("#listaUsuarios");
 
-
- function Usuario(id, user, password, nombre, apellido, edad, telefono, mail){
+/*Constructor de los usuarios (conviene una clase?)*/
+function Usuario(id, user, password, nombre, apellido, edad, telefono, mail){
     this.id=id;
     this.user=user;
     this.password=password;
@@ -35,13 +32,23 @@ const listaUsuarios = document.querySelector("#listaUsuarios");
     this.mail=mail;
 }
 
-const usuarios = [];
-
 /*CREO UN ARRAY DE OBJETOS, despues estará en el JSON o en firebase*/
-usuarios[0] = new Usuario (1, "ger1985", "1234", "German", "Tuppo","36", "1167431242", "germantuppo@gmail.com" );
-usuarios[1] = new Usuario (2, "uciel", "12345", "Uciel", "Sola","0", "1111111111", "ucielsola@gmail.com" );
-usuarios[2] = new Usuario (3, "juan123", "qwerty", "Juan", "Perez","0", "1122334455", "Juanperez@gmail.com" );
-usuarios[3] = new Usuario (4, "floyd86", "asd123", "Roger", "Waters","0", "1133221100", "waters69@gmail.com" );
+const inicializar = [];
+inicializar[0] = new Usuario (1, "ger1985", "1234", "German", "Tuppo","36", "1167431242", "germantuppo@gmail.com" );
+inicializar[1] = new Usuario (2, "uciel", "12345", "Uciel", "Sola","0", "1111111111", "ucielsola@gmail.com" );
+inicializar[2] = new Usuario (3, "juan123", "qwerty", "Juan", "Perez","0", "1122334455", "Juanperez@gmail.com" );
+inicializar[3] = new Usuario (4, "floyd86", "asd123", "Roger", "Waters","0", "1133221100", "waters69@gmail.com" );
+
+
+// Recuperamos array del localStorage. Si localStorage está vacío, la variable se inicializa con un array vacío
+let usuarios = JSON.parse(localStorage.getItem("usuarios")) || actualizarLocalStorage(inicializar);
+
+// Si el array ya contiene usuarios, los imprimimos al HTML
+if (usuarios.length) {
+	console.log("recuperado de localStorage");
+	imprimirUsuarios(usuarios);
+}
+
 
 
 /* Mostrar usuarios activos en el index (seguridad a marzo) */
@@ -68,7 +75,38 @@ function imprimirUsuarios(array) {
 	});
 }
 
-imprimirUsuarios(usuarios)
+//imprimirUsuarios(usuarios);
+
+
+
+// funcion para actualizar localStorage
+function actualizarLocalStorage(array) {
+	localStorage.setItem("usuarios", JSON.stringify(array));
+}
+
+/*Funcion para registrar usuarios*/
+function registrarUsuario(){
+    let id=usuarios.length+1;
+    usuarios.push(
+		new Usuario(
+			id,
+			registroInputUser.value,
+			registroInputPass.value,
+			registroInputNombre.value,
+			registroInputApellido.value,
+            registroInputEdad.value,
+            registroInputMail.value,
+            registroInputTelefono.value
+            // loginRecibirInfo.value
+		)
+	);
+    actualizarLocalStorage(usuarios);
+    imprimirUsuarios(usuarios);
+    
+}
+
+
+
 
 /***************************************************************************************************************
  *     
