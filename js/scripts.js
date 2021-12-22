@@ -51,11 +51,8 @@ let usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado")) || [];
 console.log (usuarioLogueado);
 
 // Recuperamos array del localStorage. Si localStorage está vacío, la variable se inicializa con inicializar
-let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-/* Esto lo hago porque quiero inicializar el localstorage, si lo hago arriba no funciona (no se por que)*/
-actualizarLocalStorage(inicializar)
-usuarios = JSON.parse(localStorage.getItem("usuarios"));
-console.log (usuarios);
+let usuarios = JSON.parse(localStorage.getItem("usuarios")) || actualizarLocalStorage(inicializar);
+console.log(usuarios);
 
 // Si el array ya contiene usuarios, los imprimimos al HTML (usuarios registrados)
 if (usuarios.length) {
