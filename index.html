@@ -78,7 +78,7 @@
 
 
     <!------------------------------------------------------------------------------------------
-                                       MODALS BOOTSTRAP LOGIN
+                                       MODALS BOOTSTRAP REGISTRO y LOGIN
     -------------------------------------------------------------------------------------------->
   <!-- Modal REGISTRO-->
   <div class="modal fade" id="registroModal" tabindex="-1" aria-labelledby="registroModalLabel" aria-hidden="true">
@@ -144,6 +144,8 @@
     </div>
   </div>
 
+
+
   <!-- Modal LOGIN-->
   <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -155,23 +157,18 @@
         <div class="modal-body">
           <form>
             <div class="mb-3">
-              <label for="exampleInputEmail2" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
+              <label for="loginInputUserOrMail" class="form-label">Usuario o mail</label>
+              <input type="text" class="form-control" id="loginInputUserOrMail">
+            </div> 
             <div class="mb-3">
-              <label for="loginPassword" class="form-label">Password</label>
+              <label for="loginPassword" class="form-label">Contraseña</label>
               <input type="password" class="form-control" id="loginPassword">
             </div>
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck2">
-              <label class="form-check-label" for="exampleCheck2">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" onclick="loginUsuario()">Ingresar</button>
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>

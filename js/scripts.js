@@ -18,9 +18,8 @@ const registroInputMail = document.querySelector("#registroInputMail");
 const registroRecibirInfo = document.querySelector("#registroRecibirInfo");
 
 /*Inputs login*/
-const loginInputUser = document.querySelector("#loginInputUser");
-const loginInputMail = document.querySelector("#loginInputMail");
-const loginInputPass = document.querySelector("#loginInputPass");
+const loginInputUserOrMail = document.querySelector("#loginInputUserOrMail");
+const loginPassword = document.querySelector("#loginPassword");
 
 /*  */
 const botonesNavegacion = document.querySelector("#botonesNavegacion");
@@ -47,34 +46,42 @@ inicializar[1] = new Usuario (2, "uciel", "12345", "Uciel", "Sola","0", "1111111
 inicializar[2] = new Usuario (3, "juan123", "qwerty", "Juan", "Perez","0", "1122334455", "Juanperez@gmail.com" );
 inicializar[3] = new Usuario (4, "floyd86", "asd123", "Roger", "Waters","0", "1133221100", "waters69@gmail.com" );
 
-
-
-
-// Recuperamos array del localStorage. Si localStorage está vacío, la variable se inicializa con inicializar
-let usuarios = JSON.parse(localStorage.getItem("usuarios")) || actualizarLocalStorage(inicializar);
-
 /*Recupero el usuario logueado del localStorage, si no existe creo un arreglo vacio*/
 let usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado")) || [];
+console.log (usuarioLogueado);
+
+// Recuperamos array del localStorage. Si localStorage está vacío, la variable se inicializa con inicializar
+let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+/* Esto lo hago porque quiero inicializar el localstorage, si lo hago arriba no funciona (no se por que)*/
+actualizarLocalStorage(inicializar)
+usuarios = JSON.parse(localStorage.getItem("usuarios"));
+console.log (usuarios);
 
 // Si el array ya contiene usuarios, los imprimimos al HTML (usuarios registrados)
 if (usuarios.length) {
-	console.log("recuperado de localStorage");
 	imprimirUsuarios(usuarios);
 }
 
-// Si el usuario está logueado, muestro un boton salir en el menú, si no lo está muestro los botones ingresar y registrar
-if (usuarioLogueado.length) {
-	console.log("Usuario logueado");
-    botonesNavegacion.innerHTML = '<button type="button" class="btn btn-danger" onclick="desloguearUsuario()">Salir</button>';
-} else
-    {
-        console.log("Usuario desogueado");
-        let deslogueado= '';
-        deslogueado+='<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Ingresar</button>'; 
-        deslogueado+='<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#registroModal">Registrarse</button>';
-        botonesNavegacion.innerHTML = deslogueado;
-    }
 
+verificarLogin();
+// Si el usuario está logueado, muestro un boton salir en el menú, si no lo está muestro los botones ingresar y registrar
+
+function verificarLogin(){
+
+    if (usuarioLogueado.length) {
+        console.log("Usuario logueado");
+        console.log(usuarioLogueado.length);
+        botonesNavegacion.innerHTML = '<button type="button" class="btn btn-danger" onclick="desloguearUsuario()">Salir</button>';
+    } else
+        {
+            console.log("Usuario deslogueado");
+            console.log(usuarioLogueado.length);
+            let deslogueado= '';
+            deslogueado+='<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Ingresar</button>'; 
+            deslogueado+='<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#registroModal">Registrarse</button>';
+            botonesNavegacion.innerHTML = deslogueado;
+        }
+}
 
 
 
@@ -106,9 +113,16 @@ function imprimirUsuarios(array) {
 
 
 
-// funcion para actualizar localStorage
+// funciones para actualizar localStorage
+/*USUARIOS*/
 function actualizarLocalStorage(array) {
+    console.log("actualizando local storage")
 	localStorage.setItem("usuarios", JSON.stringify(array));
+}
+
+/*LOGUEO*/
+function actualizarLogueoLocalStorage(array) {
+	localStorage.setItem("usuarioLogueado", JSON.stringify(array));
 }
 
 /*Funcion para registrar usuarios*/
@@ -132,23 +146,34 @@ function registrarUsuario(){
     
 }
 
-/*Funcion para loguearse*/
-function loguearUsuario(){
+/*Funcion para loguearse, funciona bien, pero la tengo que reformular para que no se almacenen todos los datos en localStorage*/
+function loginUsuario(){
+    usuarioEncontrado=[];
+    usuarioEncontrado.push (usuarios.find( ({ password }) => password === loginPassword.value ));
+    if(usuarioEncontrado[0].mail === loginInputUserOrMail.value || usuarioEncontrado[0].user === loginInputUserOrMail.value){
+        actualizarLogueoLocalStorage(usuarioEncontrado); 
+        verificarLogin();
+    } else {
+        console.log("Alguno de los datos es incorrecto")
+    }
+    
 
 }
 
 /*Funcion para desloguearse*/
 function desloguearUsuario(){
-
+    usuarioLogueado=[];
+    actualizarLogueoLocalStorage(usuarioLogueado);
+    verificarLogin();
 }
+
+
 
 /***************************************************************************************************************
  *     
- * Separo un poco esto que corresponde a los desafíos anteriores. Saqué el menú tambien porque me molesta un poco
- * el tema de los alert y los console log, ademas quiero empezar a dejar preparado lo del jueves que incluye a la 
- * preentrega. de momento en este caso solo me interesa la parte de objetos.
+ * Separo un poco esto que corresponde a los desafíos anteriores.
  * 
- *FUNCIONES
+ * FUNCIONES
  * 
  ***************************************************************************************************************/
 
