@@ -67,13 +67,14 @@ function verificarLogin(){
 
     if (usuarioLogueado.length) {
         console.log("Usuario logueado");
-        console.log(usuarioLogueado.length);
-        botonesNavegacion.innerHTML = '<button type="button" class="btn btn-danger" onclick="desloguearUsuario()">Salir</button>';
+        let logueado = '';
+        logueado += '<img src="media/no-disponible.png" class="imgPerfil">';
+        logueado += '<button type="button" class="btn btn-danger" onclick="desloguearUsuario()">Salir</button>';
+        botonesNavegacion.innerHTML = logueado;
     } else
         {
             console.log("Usuario deslogueado");
-            console.log(usuarioLogueado.length);
-            let deslogueado= '';
+            let deslogueado = '';
             deslogueado+='<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">Ingresar</button>'; 
             deslogueado+='<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#registroModal">Registrarse</button>';
             botonesNavegacion.innerHTML = deslogueado;

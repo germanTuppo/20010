@@ -20,3 +20,10 @@ footer{
 .redes li a img{
     width: 50px;
 }
+.imgPerfil{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    right: 4vw;
+    z-index: 100;
+}
