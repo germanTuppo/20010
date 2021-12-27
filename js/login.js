@@ -49,7 +49,7 @@ function verificarLogin(){
     if (usuarioLogueado.length) {
         console.log("Usuario logueado");
         let logueado = '';
-        logueado += '<img src="media/no-disponible.png" class="imgPerfil">';
+        logueado += '<img onmouseover="mostrarPerfil()" onmouseout="ocultarPerfil()" src="media/no-disponible.png" class="imgPerfil">';
         logueado += '<button type="button" class="btn btn-danger" onclick="desloguearUsuario()">Salir</button>';
         botonesNavegacion.innerHTML = logueado;
     } else
@@ -83,10 +83,34 @@ function loginUsuario(){
 
 }
 
+
+
+function mostrarPerfil(){
+    console.log ("Estoy pasando con el mouse por arriba de la foto de perfil");
+    document.getElementById("imgPerfil").innerHTML = `<div class="card">
+                                                        
+                                                        <div class="card-body">
+                                                            <img src="media/no-disponible.png" class="card-img-top w-100" alt="Imagen no disponible">
+                                                        </div>
+                                                            <ul class="list-group list-group-flush">
+                                                                <li class="list-group-item">Usuario: ${usuarioLogueado[0].user}</li>
+                                                                <li class="list-group-item">Nombre: ${usuarioLogueado[0].nombre}</li>
+                                                                <li class="list-group-item">Apellido: ${usuarioLogueado[0].apellido}</li>
+                                                                <li class="list-group-item">Edad: ${usuarioLogueado[0].edad}</li>
+                                                            </ul>
+                                                      </div>
+                                                      `;
+}
+
+function ocultarPerfil(){
+    console.log ("sacando el mouse de la foto de perfil");
+    document.getElementById("imgPerfil").innerHTML = "";
+}
+
+
 /*Funcion para desloguearse*/
 function desloguearUsuario(){
     usuarioLogueado=[];
     actualizarLogueoLocalStorage(usuarioLogueado);
     verificarLogin();
 }
-
