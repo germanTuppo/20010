@@ -67,73 +67,100 @@
     <!------------------------------------------------------------------------------------------
                                        MODALS BOOTSTRAP LOGIN
     -------------------------------------------------------------------------------------------->
-  <!-- Modal REGISTRO-->
-  <div class="modal fade" id="registroModal" tabindex="-1" aria-labelledby="registroModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="registroModallLabel">Registro</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
+<!-- Modal REGISTRO-->
+<div class="modal fade" id="registroModal" tabindex="-1" aria-labelledby="registroModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="registroModallLabel">Registro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="registroInputUser" class="form-label">Usuario</label>
+            <input type="text" class="form-control" id="registroInputUser">
+          </div> 
+          
+          <div class="mb-3">
+            <label for="registroInputPass" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="registroInputPass">
+          </div>
+
+          <div class="mb-3">
+            <label for="registroInputNombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="registroInputNombre">
+          </div> 
+
+          <div class="mb-3">
+            <label for="registroInputApellido" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="registroInputApellido">
+          </div> 
+
+          <div class="mb-3">
+            <label for="registroInputEdad" class="form-label">Edad</label>
+            <input type="text" class="form-control" id="registroInputEdad">
+          </div> 
+
+          <div class="mb-3">
+            <label for="registroInputTelefono" class="form-label">Telefono</label>
+            <input type="text" class="form-control" id="registroInputTelefono">
+          </div> 
+
+          <div class="mb-3">
+            <label for="registroInputMail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="registroInputMail" aria-describedby="registroMailHelp">
+            <div id="registroMailHelp" class="form-text">Nunca compartiremos tu mail con nadie más</div>
+          </div>
+
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="registroRecibirInfo">
+            <label class="form-check-label" for="registroRecibirInfo">Quiero recibir informacion por mail</label>
+          </div>
+
+          <!-- Validar los datos ingresados -->
+          <div id="registroValidar" class="mb-3"></div> 
+
+          <button type="submit" onclick="registrarUsuario()" class="btn btn-primary">Registrar</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Modal LOGIN-->
-  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="loginModalLabel">Login</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
+
+
+<!-- Modal LOGIN-->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="loginModalLabel">Login</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="loginInputUserOrMail" class="form-label">Usuario o mail</label>
+            <input type="text" class="form-control" id="loginInputUserOrMail">
+          </div> 
+          <div class="mb-3">
+            <label for="loginPassword" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="loginPassword">
+          </div>
+          <button type="submit" class="btn btn-primary" onclick="loginUsuario()">Ingresar</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
-    
-
+</div>
+  
 
   
     <!------------------------------------------------------------------------------------------
@@ -143,7 +170,33 @@
     <!-- Boostrap Js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     
-    <!-- Mi js -->
+        <!-- FIREBASE SCRIPTS -->
+        <script type="module">
+          // Import the functions you need from the SDKs you need
+          import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+          import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+          // TODO: Add SDKs for Firebase products that you want to use
+          // https://firebase.google.com/docs/web/setup#available-libraries
+        
+          // Your web app's Firebase configuration
+          // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+          const firebaseConfig = {
+            apiKey: "AIzaSyDTpUifK71sd8KFHo_zKEiG8tSliwlQL9Y",
+            authDomain: "mates-con-german.firebaseapp.com",
+            projectId: "mates-con-german",
+            storageBucket: "mates-con-german.appspot.com",
+            messagingSenderId: "1023293361460",
+            appId: "1:1023293361460:web:554bec4ecb4b3d4d722961",
+            measurementId: "G-RLVNTYXDR1"
+          };
+        
+          // Initialize Firebase
+          const app = initializeApp(firebaseConfig);
+          const analytics = getAnalytics(app);
+        </script>
+
+    <!-- Mis js -->
+    <script src="../js/login.js"></script>
     <script src="../js/scripts.js"></script>
 
 </body>
