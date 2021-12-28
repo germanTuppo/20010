@@ -84,7 +84,7 @@ function loginUsuario(){
 }
 
 
-
+/*  */
 function mostrarPerfil(){
     console.log ("Estoy pasando con el mouse por arriba de la foto de perfil");
     document.getElementById("imgPerfil").innerHTML = `<div class="card">
