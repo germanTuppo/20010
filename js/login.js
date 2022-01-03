@@ -63,7 +63,7 @@ function verificarLogin(){
 }
 
 
-/*LOGUEO*/
+/*LOGUEO en Local storage*/
 function actualizarLogueoLocalStorage(array) {
 	localStorage.setItem("usuarioLogueado", JSON.stringify(array));
 }
@@ -72,7 +72,7 @@ function actualizarLogueoLocalStorage(array) {
 /*Funcion para loguearse, funciona bien, pero la tengo que reformular para que no se almacenen todos los datos en localStorage*/
 function loginUsuario(){
     usuarioEncontrado=[];
-    usuarioEncontrado.push (usuarios.find( ({ password }) => password === loginPassword.value ));
+    usuarioEncontrado.push (usuarios.find( ({ password }) => password === atob(loginPassword.value) ));
     if(usuarioEncontrado[0].mail === loginInputUserOrMail.value || usuarioEncontrado[0].user === loginInputUserOrMail.value){
         actualizarLogueoLocalStorage(usuarioEncontrado); 
         verificarLogin();
@@ -84,9 +84,8 @@ function loginUsuario(){
 }
 
 
-/*  */
+/* Muestra La información del usuario al pasar con el mouse por encima de la foto de perfil */
 function mostrarPerfil(){
-    console.log ("Estoy pasando con el mouse por arriba de la foto de perfil");
     document.getElementById("imgPerfil").innerHTML = `<div class="card">
                                                         
                                                         <div class="card-body">
@@ -102,8 +101,8 @@ function mostrarPerfil(){
                                                       `;
 }
 
+/* Oculta La información del usuario al sacar el mouse de encima de la foto de perfil */
 function ocultarPerfil(){
-    console.log ("sacando el mouse de la foto de perfil");
     document.getElementById("imgPerfil").innerHTML = "";
 }
 

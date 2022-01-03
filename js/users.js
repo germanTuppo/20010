@@ -3,10 +3,10 @@ const listaUsuarios = document.querySelector("#listaUsuarios");
 
 /*CREO UN ARRAY DE OBJETOS, despues estará en el JSON o en firebase*/
 const inicializar = [];
-inicializar[0] = new Usuario (1, "ger1985", "1234", "German", "Tuppo","36", "1167431242", "germantuppo@gmail.com" );
+inicializar[0] = new Usuario (1, "ger1985", atob("1234"), "German", "Tuppo","36", "1167431242", "germantuppo@gmail.com" );
 inicializar[1] = new Usuario (2, "uciel", atob("asd123"), "Uciel", "Sola","0", "1111111111", "ucielsola@gmail.com" );
-inicializar[2] = new Usuario (3, "juan123", "qwerty", "Juan", "Perez","0", "1122334455", "Juanperez@gmail.com" );
-inicializar[3] = new Usuario (4, "floyd86", "asd123", "Roger", "Waters","0", "1133221100", "waters69@gmail.com" );
+inicializar[2] = new Usuario (3, "juan123", atob("qwerty"), "Juan", "Perez","0", "1122334455", "Juanperez@gmail.com" );
+inicializar[3] = new Usuario (4, "floyd86", atob("asd123"), "Roger", "Waters","0", "1133221100", "waters69@gmail.com" );
 
 // Recuperamos array del localStorage. Si localStorage está vacío, la variable se inicializa con inicializar
 let usuarios = JSON.parse(localStorage.getItem("usuarios")) || actualizarLocalStorage(inicializar);
