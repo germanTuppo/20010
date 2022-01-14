@@ -4,14 +4,12 @@ $.ajax({
     dataType: "json",
     success: function (respuesta) {
         agenda = respuesta;
-
-        agendaClases = JSON.parse(localStorage.getItem("agenda"));
+        JSON.parse(localStorage.getItem("agenda"));
         
-    generarAgenda(agendaClases);
+    generarAgenda();
     }
 });
       
-function generarAgenda(agendaClases){
-    console.log(agendaClases);
+function generarAgenda(){
+    console.log(agenda);
 }
-/*Esto no me está funcionando :(*/
