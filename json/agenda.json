@@ -1,32 +1,137 @@
 [
     {
 
-        "date" : 1,
-        "user": "ger1985"
+        "date" : [2022, 1, 18, 12],
+        "user": "ger1985",
+        "pago": true,
+        "materia": "biofisica",
+        "modalidad": "zoom"
 
     },
     {
 
-        "date" : 1,
-        "user": "ger1985"
+        "date" : [2022, 1, 18, 15],
+        "user": "ger1985",
+        "pago": true,
+        "materia": "algebra económicas",
+        "modalidad": "presencial"
 
     },
     {
 
-        "date" : 1,
-        "user": "ger1985"
+        "date" : [2022, 1, 18, 13],
+        "user": "uciel",
+        "pago": true,
+        "materia": "biofisica",
+        "modalidad": "zoom"
 
     },
     {
 
-        "date" : 1,
-        "user": "ger1985"
+        "date" : [2022, 1, 18, 14],
+        "user": "ger1985",
+        "pago": true,
+        "materia": "matematicas cbc",
+        "modalidad": "presencial"
 
     },
     {
 
-        "date" : 1,
-        "user": "ger1985"
+        "date" : [2022, 1, 18, 19],
+        "user": "uciel",
+        "pago": true,
+        "materia": "analisis matemático",
+        "modalidad": "domicilio"
+
+    },
+    {
+
+        "date" : [2022, 1, 19, 12],
+        "user": "ger1985",
+        "pago": true,
+        "materia": "biofisica",
+        "modalidad": "zoom"
+
+    },
+    {
+
+        "date" : [2022, 1, 19, 15],
+        "user": "ger1985",
+        "pago": true,
+        "materia": "algebra económicas",
+        "modalidad": "presencial"
+
+    },
+    {
+
+        "date" : [2022, 1, 19, 13],
+        "user": "uciel",
+        "pago": true,
+        "materia": "biofisica",
+        "modalidad": "zoom"
+
+    },
+    {
+
+        "date" : [2022, 1, 19, 14],
+        "user": "ger1985",
+        "pago": true,
+        "materia": "matematicas cbc",
+        "modalidad": "presencial"
+
+    },
+    {
+
+        "date" : [2022, 1, 19, 19],
+        "user": "uciel",
+        "pago": true,
+        "materia": "analisis matemático",
+        "modalidad": "domicilio"
+
+    },
+    {
+
+        "date" : [2022, 1, 17, 12],
+        "user": "ger1985",
+        "pago": true,
+        "materia": "biofisica",
+        "modalidad": "zoom"
+
+    },
+    {
+
+        "date" : [2022, 1, 17, 15],
+        "user": "ger1985",
+        "pago": true,
+        "materia": "algebra económicas",
+        "modalidad": "presencial"
+
+    },
+    {
+
+        "date" : [2022, 1, 17, 13],
+        "user": "uciel",
+        "pago": true,
+        "materia": "biofisica",
+        "modalidad": "zoom"
+
+    },
+    {
+
+        "date" : [2022, 1, 17, 14],
+        "user": "ger1985",
+        "pago": true,
+        "materia": "matematicas cbc",
+        "modalidad": "presencial"
+
+    },
+    {
+
+        "date" : [2022, 1, 17, 19],
+        "user": "uciel",
+        "pago": true,
+        "materia": "analisis matemático",
+        "modalidad": "domicilio"
 
     }
     
