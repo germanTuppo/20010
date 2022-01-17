@@ -1,7 +1,8 @@
 [
     {
 
-        "date" : [2022, 1, 18, 12],
+        "date": "2022-01-19",
+        "hora": 12,
         "user": "ger1985",
         "pago": true,
         "materia": "biofisica",
@@ -10,7 +11,8 @@
     },
     {
 
-        "date" : [2022, 1, 18, 15],
+        "date": "2022-01-19",
+        "hora": 14,
         "user": "ger1985",
         "pago": true,
         "materia": "algebra económicas",
@@ -19,7 +21,8 @@
     },
     {
 
-        "date" : [2022, 1, 18, 13],
+        "date": "2022-01-19",
+        "hora": 16,
         "user": "uciel",
         "pago": true,
         "materia": "biofisica",
@@ -28,7 +31,8 @@
     },
     {
 
-        "date" : [2022, 1, 18, 14],
+        "date": "2022-01-19",
+        "hora": 17,
         "user": "ger1985",
         "pago": true,
         "materia": "matematicas cbc",
@@ -37,7 +41,8 @@
     },
     {
 
-        "date" : [2022, 1, 18, 19],
+        "date": "2022-01-20",
+        "hora": 12,
         "user": "uciel",
         "pago": true,
         "materia": "analisis matemático",
@@ -46,7 +51,8 @@
     },
     {
 
-        "date" : [2022, 1, 19, 12],
+        "date": "2022-01-20",
+        "hora": 13,
         "user": "ger1985",
         "pago": true,
         "materia": "biofisica",
@@ -55,7 +61,8 @@
     },
     {
 
-        "date" : [2022, 1, 19, 15],
+        "date": "2022-01-20",
+        "hora": 12,
         "user": "ger1985",
         "pago": true,
         "materia": "algebra económicas",
@@ -64,7 +71,8 @@
     },
     {
 
-        "date" : [2022, 1, 19, 13],
+        "date": "2022-01-20",
+        "hora": 15,
         "user": "uciel",
         "pago": true,
         "materia": "biofisica",
@@ -73,7 +81,8 @@
     },
     {
 
-        "date" : [2022, 1, 19, 14],
+        "date": "2022-01-20",
+        "hora": 17,
         "user": "ger1985",
         "pago": true,
         "materia": "matematicas cbc",
@@ -82,7 +91,8 @@
     },
     {
 
-        "date" : [2022, 1, 19, 19],
+        "date": "2022-01-18",
+        "hora": 11,
         "user": "uciel",
         "pago": true,
         "materia": "analisis matemático",
@@ -91,7 +101,8 @@
     },
     {
 
-        "date" : [2022, 1, 17, 12],
+        "date": "2022-01-18",
+        "hora": 12,
         "user": "ger1985",
         "pago": true,
         "materia": "biofisica",
@@ -100,7 +111,8 @@
     },
     {
 
-        "date" : [2022, 1, 17, 15],
+        "date": "2022-01-18",
+        "hora": 13,
         "user": "ger1985",
         "pago": true,
         "materia": "algebra económicas",
@@ -109,7 +121,8 @@
     },
     {
 
-        "date" : [2022, 1, 17, 13],
+        "date" : "2022-01-18",
+        "hora": 16,
         "user": "uciel",
         "pago": true,
         "materia": "biofisica",
@@ -118,7 +131,8 @@
     },
     {
 
-        "date" : [2022, 1, 17, 14],
+        "date": "2022-01-18",
+        "hora": 17,
         "user": "ger1985",
         "pago": true,
         "materia": "matematicas cbc",
@@ -127,7 +141,8 @@
     },
     {
 
-        "date" : [2022, 1, 17, 19],
+        "date": "2022-01-18",
+        "hora": 20,
         "user": "uciel",
         "pago": true,
         "materia": "analisis matemático",

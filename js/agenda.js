@@ -27,9 +27,8 @@ function generarAgenda(){
             e.preventDefault();
             const fecha=$('#fechaClase').val();
             console.log(fecha);
-            console.log(agenda);
-            const prueba=19;
-            const arrayfiltrado=filtrarAgenda(agenda, prueba);
+
+            const arrayfiltrado= agenda.filter(arr => arr.date == fecha)
             console.log(arrayfiltrado);
 
             pintarHorarios();
@@ -62,11 +61,11 @@ function pintarHorarios(){
     });  
 }
 
-function filtrarAgenda(array, fecha){
+/* function filtrarAgenda(array, fecha){
     const filtrado = array.filter(function(element){
-        return element.date[2] == fecha;
+        return element.date == fecha;
       });
-}
+} */
 
 
 
