@@ -41,8 +41,7 @@ function generarAgenda(){
 function pintarHorarios(){
 
     $(document).ready(function(){
-        $("#agenda").append(`<div class="col-12 col-sm-6">
-                                <h2 class="text-center">Seleccionar el horario:</h2>
+        $("#agendaHorarios"). html(`    <h2 class="text-center">Seleccionar el horario:</h2>
                                 <ul class="horarios">
                                     <li class="itemHorario disponible">10hs - 11hs</li>
                                     <li class="itemHorario disponible">11hs - 12hs</li>
@@ -55,8 +54,7 @@ function pintarHorarios(){
                                     <li class="itemHorario disponible">18hs - 19hs</li>
                                     <li class="itemHorario noDisponible">19hs - 20hs</li>
                                     <li class="itemHorario noDisponible">20hs - 21hs</li>
-                                </ul>
-                            </div>`) 
+                                </ul>`) 
 
     });  
 }
