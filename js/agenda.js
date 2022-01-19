@@ -1,3 +1,6 @@
+$(".container").fadeTo(0,0);
+$(".container").fadeTo(2000,1);
+$("#agendaHorarios").fadeTo(0,0); 
 
 $.ajax({
     type: "get",
@@ -22,6 +25,7 @@ function generarAgenda(){
     });
     /* Tomo el valor de la fecha seleccionada. ME hubiera gustado lograr que no haya que presionar el botón pero no se como implementarlo. */
     $(document).ready(function(){
+        
         $("#buscarDisponibilidad").on("click",function(e){
             /* Uso prevent default para evitar que se recargue la página con el uso del form */
             e.preventDefault();
@@ -41,6 +45,7 @@ function generarAgenda(){
 function pintarHorarios(){
 
     $(document).ready(function(){
+        
         $("#agendaHorarios"). html(`    <h2 class="text-center">Seleccionar el horario:</h2>
                                 <ul class="horarios">
                                     <li class="itemHorario disponible">10hs - 11hs</li>
@@ -54,9 +59,12 @@ function pintarHorarios(){
                                     <li class="itemHorario disponible">18hs - 19hs</li>
                                     <li class="itemHorario noDisponible">19hs - 20hs</li>
                                     <li class="itemHorario noDisponible">20hs - 21hs</li>
-                                </ul>`) 
+                                </ul>`);
+        
 
     });  
+    
+    $("#agendaHorarios").fadeTo(2000,1);
 }
 
 /* function filtrarAgenda(array, fecha){
