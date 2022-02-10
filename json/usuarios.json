@@ -38,13 +38,13 @@
     {
 
         "id" : 4,
-        "user": "floyd86",
-        "password": "asd123",
-        "nombre": "Roger",
-        "apellido": "Waters",
-        "edad": 70,
-        "telefono": "1133221100",
-        "mail": "waters69@gmail.com"
+        "user": "admin",
+        "password": "admin",
+        "nombre": "admin",
+        "apellido": "admin",
+        "edad": 0,
+        "telefono": "",
+        "mail": ""
 
     }
 ]
