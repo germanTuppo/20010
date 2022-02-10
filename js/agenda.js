@@ -73,9 +73,6 @@ function pintarHorarios(){
       });
 } */
 
-
-
-
 /* Funciones de uso gral */
 
 

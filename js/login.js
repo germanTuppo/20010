@@ -83,7 +83,6 @@ function loginUsuario(){
 
 }
 
-
 /* Muestra La información del usuario al pasar con el mouse por encima de la foto de perfil */
 function mostrarPerfil(){
     document.getElementById("imgPerfil").innerHTML = `<div class="card">

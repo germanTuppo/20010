@@ -9,10 +9,7 @@ main{
     min-height: 600px;
 }
 
-
-
 /*CLases*/
-
 .horarios{
     list-style: none;
     font-size: 1.6rem;
@@ -33,7 +30,6 @@ main{
 .noDisponible{
     background-color: red;
 }
-
 
 
 /*FOOTER*/
